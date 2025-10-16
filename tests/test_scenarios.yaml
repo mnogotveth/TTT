@@ -1,0 +1,26 @@
+tests:
+  - name: "Проверка времени сервера (Новосибирск)"
+    adapter: "net_time"
+    parameters:
+      url: "https://tools.aimylogic.com/api/now?tz=Asia/Novosibirsk&format=dd/MM/yyyy HH:mm:ss"
+      tz: "Asia/Novosibirsk"
+      tolerance_sec: 5
+
+  - name: "Проверка загрузки CPU (30 секунд)"
+    adapter: "cpu_load"
+    parameters:
+      duration: 30
+      max_cpu_load: 50
+
+  - name: "Негативный тест - неверный URL"
+    adapter: "net_time"
+    parameters:
+      url: "https://invalid-url-test.example.com/api/now"
+      tz: "Asia/Novosibirsk"
+      tolerance_sec: 5
+
+  - name: "Негативный тест - высокая нагрузка CPU"
+    adapter: "cpu_load"
+    parameters:
+      duration: 5
+      max_cpu_load: 1
