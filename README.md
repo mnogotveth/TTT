@@ -15,15 +15,14 @@ source venv/bin/activate
 
 # Установи зависимости
 pip install -r requirements.txt
-Запуск
-bash
+
 # Запусти все тесты
 python main.py
 
-Структура тестов
+# Структура тестов
 Тесты описываются в YAML файлах (tests/test_scenarios.yaml):
 
-Результаты
+# Результаты
 После запуска создаются:
 
 test_framework.log - детальные логи выполнения
